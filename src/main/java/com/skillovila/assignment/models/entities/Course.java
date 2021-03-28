@@ -11,10 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -52,10 +55,19 @@ public class Course {
     @JsonManagedReference(value = "prices")
     private Set<Price> prices;
     
+    @JsonIgnore
+    @ManyToMany(targetEntity = Coupon.class, mappedBy = "courses", cascade = CascadeType.ALL)
+    private Set<Coupon> coupons;
+    
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "discounts")
+    private Set<Discount> discounts;
+    
     @Override
     public String toString() {
         return "Course{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\''
-                + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", prices=" + prices + '}';
+                + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", prices=" + prices + ", coupons="
+                + coupons + ", discounts=" + discounts + '}';
     }
     
     @Override

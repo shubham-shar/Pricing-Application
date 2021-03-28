@@ -37,4 +37,6 @@ public class PriceDto {
     
     private int durationOfMonths;
     
+    private CouponDto couponDto;
+    
 }
