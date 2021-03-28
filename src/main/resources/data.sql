@@ -15,7 +15,7 @@ INSERT INTO pricing_strategy(`id`, `duration_in_months`, `type`, `price_id`) val
 
 INSERT INTO coupon(`id`, `name`) values (1, 'test');
 INSERT INTO COUPON_COURSES(`courses_id`,coupons_id) values (1,1);
-INSERT INTO discount(`id`, `amount`, `course_id`, `coupon_id`) values (1, 100.0, 1, 1);
+INSERT INTO discount(`id`, `amount`, `course_id`, `coupon_id`) values (1, 500.0, 1, 1);
 
 
 INSERT INTO tax_component(`id`, `gst_amount`, `price_id`) values (1, 100, 1);

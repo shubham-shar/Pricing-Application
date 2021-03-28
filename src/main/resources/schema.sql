@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS PRICING_STRATEGY (
 CREATE TABLE IF NOT EXISTS COUPON (
    id INT PRIMARY KEY auto_increment,
    created_at timestamp,
-   name varchar(255),
+   name varchar(255) unique not null,
    updated_at timestamp
 );
 

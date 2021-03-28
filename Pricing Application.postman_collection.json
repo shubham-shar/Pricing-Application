@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "5a9fadca-4436-497e-a1e1-2cb2e3af3834",
+		"name": "Pricing Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get Course by strategy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/course/strategy?currency=inr&type=ONE_TIME",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"strategy"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "inr"
+						},
+						{
+							"key": "type",
+							"value": "ONE_TIME"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get course with coupon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/course/1/coupon/price?currency=inr&coupon=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"1",
+						"coupon",
+						"price"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "inr"
+						},
+						{
+							"key": "coupon",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/course/all?currency=inr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"all"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "inr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get course by price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/course/1/price?currency=inr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"1",
+						"price"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "inr"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

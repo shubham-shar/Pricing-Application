@@ -25,11 +25,7 @@ public class PriceDto {
     
     private Double conversionMultiple;
     
-    private Double discount;
-    
     private boolean isCouponApplied = false;
-    
-    private String appliedCoupon = null;
     
     private Currency currency = Currency.INR;
     

@@ -34,7 +34,7 @@ public class ApiController {
     
     @GetMapping("/{id}/price")
     public CourseDto getCourseById(@PathVariable("id") Long courseId, @RequestParam String currency) {
-        log.info("Fetching the course {} price", courseId);
+        log.info("Fetching the course {} price {}", courseId, currency);
         return priceService.fetchCourseById(courseId, currency);
     }
     
@@ -43,5 +43,12 @@ public class ApiController {
             @RequestParam String currency) {
         log.info("Fetching all the course based on strategy {} with currency {}", strategy, currency);
         return priceService.getCoursesByStrategy(strategy, currency);
+    }
+    
+    @GetMapping("/{id}/coupon/price")
+    public CourseDto getCourseById(@PathVariable("id") Long courseId, @RequestParam String currency,
+            @RequestParam String coupon) {
+        log.info("Fetching the course {} price, {} currency and with coupon - {}", courseId, currency, coupon);
+        return priceService.fetchCourseByIdWithCoupon(courseId, currency, coupon);
     }
 }

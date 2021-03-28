@@ -1,5 +1,7 @@
 package com.skillovila.assignment.repositories;
 
+import java.util.Optional;
+
 import com.skillovila.assignment.models.entities.Coupon;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -8,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *         <p>
  *         28/03/21
  */
-public interface CouponRepository extends JpaRepository<Coupon, Long> {}
+public interface CouponRepository extends JpaRepository<Coupon, Long> {
+    Optional<Coupon> findByName(String coupon);
+}
