@@ -30,9 +30,6 @@ import lombok.extern.slf4j.Slf4j;
 public class PriceService {
     
     @Autowired
-    private PriceRepository priceRepository;
-    
-    @Autowired
     private CourseRepository courseRepository;
     
     @Autowired
